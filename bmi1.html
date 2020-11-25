@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+        <html>
+           <head>
+        <title>BMI Calculator</title>
+             
+        <script type="text/javascript">
+          
+            function computeBMI() {
+                var height = Number(document.getElementById("height").value);
+                var heightunits = document.getElementById("heightunits").value;
+                var weight = Number(document.getElementById("weight").value);
+                var weightunits = document.getElementById("weightunits").value;
+				var gender = document.getElementById("gen").value;
+               
+                var BMI = Math.round(703*weight / Math.pow(height, 2)*1000);
+        
+                //Display result of calculation
+                document.getElementById("output").innerText = Math.round(BMI * 100) / 100;
+        
+                var output = Math.round(BMI * 100) / 100
+                if (output < 18.5)
+                    document.getElementById("comment").innerText = "Underweight";
+                else if (output >= 18.5 && output <= 25)
+                    document.getElementById("comment").innerText = "Normal";
+                else if (output >= 25 && output <= 30)
+                    document.getElementById("comment").innerText = "Obese";
+                else if (output > 30)
+                    document.getElementById("comment").innerText = "Overweight";
+                
+            }
+        </script>
+         </head>
+         <body>
+        <fieldset style="width: 270px">
+		<form>
+		<p>BMI Calculator<select type="multiple" id="gen"/>
+		 
+		  <option value="male">male</option>
+		  <option value="female">female</option>
+		  </select>
+		  </p>
+		  </fieldset>
+		  <fieldset style="width: 270px">
+        <p>Enter your height: <input type="text" id="height"/>
+            
+                <input id="height">inches</option>
+            
+             </p>
+			  </fieldset>
+			<fieldset style="width: 270px">
+        <p>Enter your weight: <input type="text" id="weight"/>
+            <select type="multiple" id="weightunits">
+                <option value="lb">pounds</option>
+            </select>
+        </p>
+		 </fieldset>
+		 <fieldset style="width: 270px">
+        <center><input type="submit" value="calculate" onclick="computeBMI();"></center>
+		 </fieldset>
+		<fieldset style="width: 270px">
+        <p>BMI: <span id="output"></span></p>
+         </fieldset>
+        <h2>This means you are: <span id="comment"> ?</span> </h2> 
+         </body>
+        <style>
+		table,th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+					 }
+		</style>
+		<table width="40%">
+	<caption>BMI TABLE</caption>
+	<tr>
+		<b>
+			<th >ADULTS</th>
+			<th>WOMEN</th>
+			<th>MEN</th>
+			
+	</tr>
+	<tr>
+		<b>
+			<th>anorexia</th>
+			<th>Less than 17.50</th>
+			<th>Less than 17.50</th>
+			
+	</tr>
+	<tr>
+		<b>
+			<th>underweight</th>
+			<th>17.51-19.10</th>
+			<th>17.501-20.70</th>
+			
+	</tr>
+	<tr>
+		<b>
+			<th>Ideal range</th>
+			<th>19.11-25.80</th>
+			<th>20.71-26.40</th>
+			
+	</tr>
+		<tr>
+		<b>
+			<th>marginally overweight range</th>
+			<th>25.81-27.30</th>
+			<th>26.41-27.80</th>
+			
+	</tr>
+	<tr>
+		<b>
+			<th>overweight range</th>
+			<th>27.31-21.30</th>
+			<th>27.81-31.10</th>
+			
+	</tr><tr>
+		<b>
+			<th>very overweight range</th>
+			<th>more than 32.30</th>
+			<th>more than 31.10</th>
+			
+	</tr>
+	</table>
+		
+		
+		
+		
+
+		
+        </html>
